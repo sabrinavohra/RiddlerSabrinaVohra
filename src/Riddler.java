@@ -4,7 +4,7 @@
  * for Adventures in Algorithms
  * At Menlo School in Atherton, CA
  *
- * Completed by: YOUR NAME HERE
+ * Completed by: Sabrina Vohra
  */
 public class Riddler {
 
@@ -12,7 +12,9 @@ public class Riddler {
         String decrypted = "";
 
         // TODO: Complete the decryptOne() function.
-
+        for(int i = 0; i < encrypted.length(); i++) {
+            decrypted+=
+        }
         return decrypted;
     }
 
