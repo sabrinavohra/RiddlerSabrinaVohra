@@ -17,8 +17,11 @@ public class Riddler {
             String currentLetter = encrypted.substring(i,i+1);
             for(int j = 0; j < NUM_LETTERS; j++) {
                 if(ALPHABET.substring(j,j+1).equals(currentLetter)) {
-                    // What about wrap around case
-                    decrypted += ALPHABET.charAt(j-17);
+                    int num = j - 17;
+                    if(num < 0) {
+                        num = NUM_LETTERS - num;
+                    }
+                    decrypted += ALPHABET.charAt(num);
                 }
             }
         }
