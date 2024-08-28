@@ -15,20 +15,18 @@ public class Riddler {
         String decrypted = "";
         // TODO: Complete the decryptOne() function.
         for(int i = 0; i < encrypted.length(); i++) {
-            String currentLetter = encrypted.substring(i,i+1);
-            for(int j = 0; j < NUM_LETTERS; j++) {
-                if(ALPHABET.substring(j,j+1).equals(currentLetter)) {
-                    int num = j - 17;
-                    if(num < 0) {
-                        num = NUM_LETTERS - num;
-                    }
-                    if(num > NUM_LETTERS) {
-                        num = num - NUM_LETTERS;
-                    }
-                    decrypted += ALPHABET.charAt(num);
-                }
+            char currentCharacter = encrypted.charAt(i);
+            if(currentCharacter >= 'A' && currentCharacter <= 'Z') {
+                decrypted += (char)(((currentCharacter - 'A' + 9) % 26) + 'A');
+            }
+            else if(currentCharacter >= 'a' && currentCharacter <= 'z') {
+                decrypted += (char)(((currentCharacter - 'a' + 9) % 26) + 'a');
+            }
+            else {
+                decrypted += currentCharacter + " ";
             }
         }
+        System.out.println(decrypted);
         return decrypted;
     }
 
@@ -51,6 +49,7 @@ public class Riddler {
         // Split up each chunk of numbers into the appropriate size
         // Decode by changing numbers into their ASCII letter assignments
         // Print the new letter assignments
+        System.out.println(decrypted);
         return decrypted;
     }
 
