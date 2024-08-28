@@ -37,7 +37,7 @@ public class Riddler {
         // TODO: Complete the decryptTwo() function.
         for(int i = 0; i < encrypted.length(); i++) {
             currentNumber = encrypted.substring(i, i+1);
-            if(encrypted.substring(i, i+1) == " ") {
+            if(encrypted.substring(i, i+1) == "  ") {
                 int num = Integer.parseInt(currentNumber);
                 add = (char)num;
             }
