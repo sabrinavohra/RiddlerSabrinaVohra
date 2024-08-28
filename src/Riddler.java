@@ -26,7 +26,6 @@ public class Riddler {
                 decrypted += currentCharacter + " ";
             }
         }
-        System.out.println(decrypted);
         return decrypted;
     }
 
