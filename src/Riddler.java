@@ -45,7 +45,7 @@ public class Riddler {
             if(i % 8 == 0) {
                 for(int j = 0; j < current.length(); j++) {
                     if(current.charAt(j) == '1') {
-                        value += (1<<j);
+                        value += (1<<(7 - j - 1));
                     }
                 }
                 intValues += (value + " ");
@@ -60,29 +60,14 @@ public class Riddler {
         for(int i = 0; i < split.length; i++) {
             decrypted += (char)Integer.parseInt(split[i]);
         }
-
-//            if(i % 7 == 0) {
-//                for(int j = 0; j < current.length(); j++) {
-//                    if(current.charAt(j) == 1) {
-//                        value += (int) Math.pow(2, current.length() -1);
-//                    }
-//                }
-//                intValues += value + " ";
-//            }
-//            else {
-//                current += encrypted.charAt(i);
-//            }
-//        }
-        // Split up the string into 8-character segments
-        // Use binary to switch into ASCII
-        // Change the ASCII values to their letter equivalents
-        // Add to decrypted String
-        System.out.println(decrypted);
+        decrypted = decrypted.substring(1);
         return decrypted;
     }
 
     public String decryptFour(String encrypted) {
         String decrypted = "";
+        for(int i = 0; i < encrypted.length(); i++) {
+        }
         // TODO: Complete the decryptFour() function.
         // Test cases: does truck = space?
         // Figure out 7 letter word that matches between them and find letters to decode
