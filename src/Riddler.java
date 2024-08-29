@@ -7,9 +7,7 @@
  * Completed by: Sabrina Vohra
  */
 public class Riddler {
-    private static final String ALPHABET = "abcdefghijklmnopqrstuvwxyz";
-    private static final int NUM_LETTERS = 26;
-    private static final int BINARY_SIZE = 8;
+
 
     public String decryptOne(String encrypted) {
         String decrypted = "";
@@ -31,44 +29,55 @@ public class Riddler {
 
     public String decryptTwo(String encrypted) {
         String decrypted = "";
-        String currentNumber;
-        char add = '\0';
-        // TODO: Complete the decryptTwo() function.
-        for(int i = 0; i < encrypted.length(); i++) {
-            currentNumber = encrypted.substring(i, i+1);
-            if(encrypted.substring(i, i+1) == " ") {
-                int num = Integer.parseInt(currentNumber);
-                add = (char)num;
-            }
-            else {
-                currentNumber += currentNumber;
-            }
-            decrypted += add;
+        String[] split = encrypted.split(" ");
+        for(int i = 0; i < split.length; i++) {
+            decrypted += (char)Integer.parseInt(split[i]);
         }
-        // Split up each chunk of numbers into the appropriate size
-        // Decode by changing numbers into their ASCII letter assignments
-        // Print the new letter assignments
-        System.out.println(decrypted);
         return decrypted;
     }
 
     public String decryptThree(String encrypted) {
         String decrypted = "";
-        String currentNumber = "";
-        char add = '\0';
-        // TODO: Complete the decryptThree() function.
-        for(int i = 0; i <  encrypted.length(); i++) {
-            currentNumber += encrypted.substring(i,i+1);
-            if(currentNumber.length() == BINARY_SIZE) {
-                int ascii = Integer.parseInt(currentNumber, 2);
-                add = (char)ascii;
+        String current = "";
+        String intValues = "";
+        int value = 0;
+        for(int i = 0; i < encrypted.length(); i++) {
+            if(i % 8 == 0) {
+                for(int j = 0; j < current.length(); j++) {
+                    if(current.charAt(j) == '1') {
+                        value += (1<<j);
+                    }
+                }
+                intValues += (value + " ");
+                current = "";
+                value = 0;
             }
-            decrypted += add;
+            else {
+                current += encrypted.charAt(i);
+            }
         }
+        String[] split = intValues.split(" ");
+        for(int i = 0; i < split.length; i++) {
+            decrypted += (char)Integer.parseInt(split[i]);
+        }
+
+//            if(i % 7 == 0) {
+//                for(int j = 0; j < current.length(); j++) {
+//                    if(current.charAt(j) == 1) {
+//                        value += (int) Math.pow(2, current.length() -1);
+//                    }
+//                }
+//                intValues += value + " ";
+//            }
+//            else {
+//                current += encrypted.charAt(i);
+//            }
+//        }
         // Split up the string into 8-character segments
         // Use binary to switch into ASCII
         // Change the ASCII values to their letter equivalents
         // Add to decrypted String
+        System.out.println(decrypted);
         return decrypted;
     }
 

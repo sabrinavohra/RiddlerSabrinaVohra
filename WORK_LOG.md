@@ -8,6 +8,7 @@ Name: Sabrina Vohra
 | Aug 23 | 11:25 - 11:30am  |                                                                                                                                                                            I started debugging the first one for the wraparound case. |
 | Aug 24 | 11:00 -  11:30am | I solved and tested the first one (made sure the wraparound case worked, although it is not the most efficient code,  yet). Finished problem 2 and 3 and tested with RiddleTester by converting the values into ASCII values / chars. |
 | Aug 27 |  8:30 - 8:45pm   |                                              I tested my code from the previous iterations and realized that it didn't work correctly, retried to make it more efficient and to make sure that it works correctly - only finished #1. |
+| Aug 28 |  9:00 - 10:35pm  |                                                                                                  I finished #2. I worked for a long time on #3, I'm running into some bugs and I'm unable to properly decode using bitwise operators. |
 
 
 To add a new row to the table, click into a cell and then hit shift-enter.
